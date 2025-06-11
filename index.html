@@ -42,72 +42,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>北京故宮旅行行程規劃</title>
+    <title>北京旅行行程規劃</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="password-section">
-        <h1>北京故宮旅行行程規劃</h1>
-        <p>請輸入通關密碼以進入網頁</p>
+    <div id="password-screen">
+        <h1>北京旅行行程規劃</h1>
+        <p>請輸入通關密碼：</p>
         <input type="password" id="password-input" placeholder="輸入密碼">
         <button onclick="checkPassword()">進入</button>
         <p id="error-message" class="error"></p>
     </div>
 
     <div id="main-content" class="hidden">
-        <h1>北京故宮旅行行程規劃</h1>
-        <p>請選擇最多4個熱門景點，每個景點預留45分鐘，行程中將安排1小時用餐時間，點擊「生成行程」以查看規劃結果。</p>
-        
-        <div id="attractions">
+        <h1>北京旅行行程規劃</h1>
+        <p>請選擇最多4個景點：</p>
+        <div class="attractions">
             <div class="attraction">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/20200110_Meridian_Gate-2.jpg/500px-20200110_Meridian_Gate-2.jpg" alt="午門">
-                <p>午門</p>
-                <input type="checkbox" class="attraction-checkbox" value="午門">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/%E6%99%AF%E5%B1%B1%E5%85%AC%E5%9B%AD_%2819687188164%29.jpg/500px-%E6%99%AF%E5%B1%B1%E5%85%AC%E5%9B%AD_%2819687188164%29.jpg" alt="故宮">
+                <p>故宮</p>
+                <input type="checkbox" value="故宮">
             </div>
             <div class="attraction">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Hall_of_Supreme_Harmony%2C_Forbidden_City%2C_from_southeast.jpg/500px-Hall_of_Supreme_Harmony%2C_Forbidden_City%2C_from_southeast.jpg" alt="太和殿">
-                <p>太和殿</p>
-                <input type="checkbox" class="attraction-checkbox" value="太和殿">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/The_Great_Wall_of_China_at_Jinshanling-edit.jpg/500px-The_Great_Wall_of_China_at_Jinshanling-edit.jpg" alt="長城">
+                <p>長城</p>
+                <input type="checkbox" value="長城">
             </div>
             <div class="attraction">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Palace_of_Heavenly_Purity_%2820220218132818%29.jpg/500px-Palace_of_Heavenly_Purity_%2820220218132818%29.jpg" alt="乾清宮">
-                <p>乾清宮</p>
-                <input type="checkbox" class="attraction-checkbox" value="乾清宮">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Tian%27anmen_from_the_square_%2820200825114150%29.jpg/500px-Tian%27anmen_from_the_square_%2820200825114150%29.jpg" alt="天安門廣場">
+                <p>天安門廣場</p>
+                <input type="checkbox" value="天安門廣場">
             </div>
             <div class="attraction">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Forbidden_City%2C_Garden.jpg/500px-Forbidden_City%2C_Garden.jpg" alt="御花園">
-                <p>御花園</p>
-                <input type="checkbox" class="attraction-checkbox" value="御花園">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/%E9%A2%90%E5%92%8C%E5%9B%AD%E4%B8%87%E5%AF%BF%E5%B1%B1%E4%BD%9B%E9%A6%99%E9%98%81.jpg/500px-%E9%A2%90%E5%92%8C%E5%9B%AD%E4%B8%87%E5%AF%BF%E5%B1%B1%E4%BD%9B%E9%A6%99%E9%98%81.jpg" alt="頤和園">
+                <p>頤和園</p>
+                <input type="checkbox" value="頤和園">
             </div>
             <div class="attraction">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Forbidden_City_Beijing_Shenwumen_Gate.JPG/500px-Forbidden_City_Beijing_Shenwumen_Gate.JPG" alt="神武門">
-                <p>神武門</p>
-                <input type="checkbox" class="attraction-checkbox" value="神武門">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Temple_of_Heaven_20160323_01.jpg/500px-Temple_of_Heaven_20160323_01.jpg" alt="天壇">
+                <p>天壇</p>
+                <input type="checkbox" value="天壇">
             </div>
             <div class="attraction">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Flickr_-_archer10_%28Dennis%29_-_China-6248.jpg/330px-Flickr_-_archer10_%28Dennis%29_-_China-6248.jpg" alt="養心殿">
-                <p>養心殿</p>
-                <input type="checkbox" class="attraction-checkbox" value="養心殿">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Beihai_Park_65414.jpg/500px-Beihai_Park_65414.jpg" alt="北海公園">
+                <p>北海公園</p>
+                <input type="checkbox" value="北海公園">
             </div>
             <div class="attraction">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/%E5%A3%BD%E5%B1%B1%E5%B7%96%E8%A7%80%E9%9F%B3%E5%AF%BA%E5%AF%B6%E7%9F%B3%E9%99%B6%E4%B9%9D%E9%BE%8D%E5%A3%81.jpg/330px-%E5%A3%BD%E5%B1%B1%E5%B7%96%E8%A7%80%E9%9F%B3%E5%AF%BA%E5%AF%B6%E7%9F%B3%E9%99%B6%E4%B9%9D%E9%BE%8D%E5%A3%81.jpg" alt="九龍壁">
-                <p>九龍壁</p>
-                <input type="checkbox" class="attraction-checkbox" value="九龍壁">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Wanfunjing_Road1.jpg/500px-Wanfunjing_Road1.jpg" alt="王府井">
+                <p>王府井</p>
+                <input type="checkbox" value="王府井">
             </div>
             <div class="attraction">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Paleis_van_het_verzamelen_van_essentie.JPG/500px-Paleis_van_het_verzamelen_van_essentie.JPG" alt="鐘粹宮">
-                <p>鐘粹宮</p>
-                <input type="checkbox" class="attraction-checkbox" value="鐘粹宮">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Beijing_national_stadium.jpg/500px-Beijing_national_stadium.jpg" alt="鳥巢">
+                <p>鳥巢</p>
+                <input type="checkbox" value="鳥巢">
             </div>
         </div>
-
         <button onclick="generateItinerary()">生成行程</button>
+        <p id="warning-message" class="error"></p>
         <div id="itinerary-result" class="hidden">
-            <h2>您的行程規劃</h2>
-            <div id="result-text"></div>
-            <div class="button-container">
-                <button onclick="clearItinerary()" class="cancel-button">取消</button>
-            </div>
+            <h2>您的北京旅行行程</h2>
+            <table id="itinerary-list">
+                <thead>
+                    <tr>
+                        <th>時間</th>
+                        <th>活動</th>
+                        <th>介紹</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+            <button onclick="clearItinerary()" class="cancel-button">取消</button>
         </div>
     </div>
 
